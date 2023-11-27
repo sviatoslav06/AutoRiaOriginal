@@ -1,8 +1,23 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model List<DataAccess.Data.Entities.Cars>;
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+    <h1>Used cars</h1>
+    <p>Offers for the sale of cars</p>
+    <div>
+        @foreach(var i in Model)
+        {
+            <div class="d-flex flex-row w-50 gap-3">
+                <img class="w-50" src="@i.ImageUrl" alt="Car">
+                <div>
+                    <h5>@i.Brand @i.Model @i.Year</h5>
+                    <p>@i.Price $</p>
+                    <div>
+                        <p>@i.Engine</p>
+                        <p>@i.City</p>
+                        <p>@i.Description</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
 </div>
