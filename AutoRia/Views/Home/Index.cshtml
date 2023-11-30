@@ -4,6 +4,9 @@
     <h1>Used cars</h1>
     <p>Offers for the sale of cars</p>
     <div>
+        <a asp-controller="Car" asp-action="Create" class="btn btn-success">Sell Your Car</a>
+    </div>  
+    <div>
         @foreach(var i in Model)
         {
             <div class="d-flex flex-row w-50 gap-3">

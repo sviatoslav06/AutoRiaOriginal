@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace AutoRia.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize]
     public class CarController : Controller
     {
         private readonly CarDbContext ctx;
@@ -25,6 +25,7 @@ namespace AutoRia.Controllers
 
             return View(products);
         }
+        [Authorize(Roles = "Admin")]
         public IActionResult Delete(int id)
         {
             var item = ctx.Cars.Find(id);
@@ -36,6 +37,7 @@ namespace AutoRia.Controllers
 
             return RedirectToAction("Index");
         }
+        [Authorize]
         [HttpGet]
         public IActionResult Create()
         {
@@ -43,6 +45,7 @@ namespace AutoRia.Controllers
 
             return View();
         }
+        [Authorize]
         [HttpPost]
         public IActionResult Create(Cars prod)
         {
@@ -57,6 +60,7 @@ namespace AutoRia.Controllers
 
             return RedirectToAction("Index");
         }
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Edit(int id)
         {
@@ -68,6 +72,7 @@ namespace AutoRia.Controllers
 
             return View(item);
         }
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult Edit(Cars car)
         {
@@ -82,6 +87,7 @@ namespace AutoRia.Controllers
 
             return RedirectToAction("Index");
         }
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Show(int id)
         {
