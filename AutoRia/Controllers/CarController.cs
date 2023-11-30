@@ -88,7 +88,7 @@ namespace AutoRia.Controllers
 
             ViewBag.Message = item;
 
-            return View("ShowProduct");
+            return View("ShowCar");
         }
     }
 }
