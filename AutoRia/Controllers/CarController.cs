@@ -1,10 +1,12 @@
 ﻿using DataAccess;
 using DataAccess.Data.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace AutoRia.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class CarController : Controller
     {
         private readonly CarDbContext ctx;
@@ -16,6 +18,7 @@ namespace AutoRia.Controllers
         {
             this.ViewBag.Categories = new SelectList(ctx.Categories.ToList(), "Id", "Name");
         }
+        [AllowAnonymous]
         public IActionResult Index()
         {
             var products = ctx.Cars.ToList();

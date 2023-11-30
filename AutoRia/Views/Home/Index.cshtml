@@ -7,7 +7,7 @@
         @foreach(var i in Model)
         {
             <div class="d-flex flex-row w-50 gap-3">
-                <img class="w-50" src="@i.ImageUrl" alt="Car">
+                <a asp-controller="Home" asp-action="Show" asp-route-id="@i.Id" asp-area="" class="w-50"><img class="w-100" src="@i.ImageUrl" alt="Car"></a>
                 <div>
                     <h5>@i.Brand @i.Model @i.Year</h5>
                     <p>@i.Price $</p>

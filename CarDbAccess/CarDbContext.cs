@@ -1,4 +1,6 @@
 ﻿using DataAccess.Data.Entities;
+using DataAccess.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess
 {
-    public class CarDbContext : IdentityDbContext
+    public class CarDbContext : IdentityDbContext<User>
     {
         public CarDbContext() { }
         public CarDbContext(DbContextOptions options) : base(options) { }

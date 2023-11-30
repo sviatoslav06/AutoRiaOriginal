@@ -3,3 +3,28 @@
     var data = ViewBag.Message;
 }
 
+<div class="d-flex gap-5">
+    <div class="p-4 shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+        <img src="@data.ImageUrl" style="width:99%" />
+    </div>
+    <div class="p-5 shadow-lg p-3 mb-5 bg-body-tertiary rounded" style="width:100%">
+        <h1 class="text-center">@data.Brand @data.Model @data.Year</h1>
+        <div class="d-flex justify-content-between">
+            <p class="fs-3">@data.Price $</p>
+            <p class="fs-3">
+                @if (data.IsUsed)
+                {
+                    <span class="badge bg-success">New</span>
+                }
+                else
+                {
+                    <span class="badge bg-secondary">Were Used</span>
+                }
+            </p>
+        </div>
+        <p class="mb-5">@data.Description</p>
+        <p class="fw-bold">City: @data.City</p>
+        <p class="fw-bold">Phone number: @data.Phone</p>
+        <p class="fw-bold">Mail: @data.Mail</p>
+    </div>
+</div>
