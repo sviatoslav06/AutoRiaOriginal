@@ -1,0 +1,41 @@
+﻿<h1 class="align-content-center">Favorites</h1>
+
+<table class="table table-striped mt-5">
+    <thead>
+        <tr>
+            <th scope="col">Image</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">City</th>
+            <th scope="col">Is Used</th>
+            <th scope="col">Category</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr class="align-middle">
+                <td><img src="@i.ImageUrl" style="width: 100px"></td>
+                <td>@i.Brand @i.Model @i.Year</td>
+                <td>@i.Price$</td>
+                <td>@i.City</td>
+                <td>
+                    @if (i.IsUsed)
+                    {
+                        <span class="badge bg-success">New</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-secondary">Were Used</span>
+                    }
+                </td>
+                <td>@i.CategoryId</td>
+                <td>
+                    <a asp-controller ="Home" asp-action="Show" asp-route-id="@i.Id" asp-area="" class="btn btn-secondary"><img src="./images/eye.png" style="width: 30px" /></a>
+                    <a asp-controller="Favorites" asp-action="Remove" asp-route-id="@i.Id" asp-area="" class="btn btn-danger" style="background-color: #ff3f5b"><img src="./images/trash-bin.png" style="width: 30px" /></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

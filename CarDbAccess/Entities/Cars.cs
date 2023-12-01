@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DataAccess.Entities;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
 namespace DataAccess.Data.Entities
@@ -21,7 +22,6 @@ namespace DataAccess.Data.Entities
         public string City { get; set; }
         public string? Description { get; set; }
         public Category? Category { get; set; }
-
-        //public ICollection<Favorite>? Favorites { get; set; }
+        public ICollection<Favorite>? Favorites { get; set; }
     }
 }

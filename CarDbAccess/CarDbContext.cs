@@ -47,7 +47,7 @@ namespace DataAccess
             });
         }
 
-        //public DbSet<Favorite> Favorites { get; set; }
+        public DbSet<Favorite> Favorites { get; set; }
         public DbSet<Cars> Cars { get; set; }
         public DbSet<Category> Categories { get; set; }
     }

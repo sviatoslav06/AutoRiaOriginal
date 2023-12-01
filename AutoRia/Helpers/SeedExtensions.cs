@@ -1,7 +1,10 @@
-﻿using AutoRia.Models;
+﻿using System;
+using System.Threading.Tasks; // Add this using statement
+using AutoRia.Models;
 using DataAccess.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection; // Add this using statement
 
 namespace AutoRia.Helpers
 {
